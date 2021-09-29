@@ -1,20 +1,27 @@
 package jp.te4a.spring.boot.myapp2;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
+
     @Test
-    public void shouldAnswerWithTrue()
+    public void Test_taro()
     {
-        assertTrue( true );
+        HelloController helloController = new HelloController();
+        String expect = "Taro desu!";
+        String actual = helloController.taro();
+        assertEquals(expect, actual);;
+    }
+
+    @Test
+    public void Test_index()
+    {
+        HelloController helloController = new HelloController();
+        String expect = "Hello World!";
+        String actual = helloController.index();
+        assertEquals(expect, actual);;
     }
 }
